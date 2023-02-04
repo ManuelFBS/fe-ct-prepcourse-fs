@@ -62,7 +62,25 @@ function esVocal(letra) {
    // Escribe una función que reciba una letra y, si es una vocal, muestre el mensaje “Es vocal”.
    // Si el usuario ingresa un string de más de un caracter debes retornar el mensaje: "Dato incorrecto".
    // Si no es vocal, tambien debe retornar "Dato incorrecto".
-   if (letra === 'a') {
+   var vocales = ['a', 'e', 'i', 'o', 'u'];
+   if (vocales.includes(letra.toLowerCase())) return 'Es vocal';
+   else return 'Dato incorrecto';
+   // ------------------------------------------------------------------------------------
+   /*var tipo;
+   switch (letra.toLowerCase()) {
+      case 'a':
+      case 'e':
+      case 'i':
+      case 'o':
+      case 'u':
+         tipo = 'Es vocal';
+         break
+      default:
+         tipo = 'Dato incorrecto'
+   }
+   return tipo;*/
+   // -----------------------------------------------------------------------------------
+   /*if (letra === 'a') {
       return 'Es vocal';
    }
    else if (letra === 'e') {
@@ -79,7 +97,7 @@ function esVocal(letra) {
    }
    else {
       return 'Dato incorrecto';
-   }
+   }*/
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
