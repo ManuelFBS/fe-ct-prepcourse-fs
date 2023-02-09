@@ -55,16 +55,16 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
-   var arreglo = [];
+   var arreglo = [];      
+   array.forEach(element => {
+      arreglo.push(cb(element));
+   });
+   
    /*for (let i = 0; i < array.length; i++) {
       // cb(array[i]);
       arreglo.push(cb(array[i]));
    }*/
    
-   array.forEach(element => {
-      arreglo.push(cb(element));
-   });
-
    return arreglo;
 }
 
