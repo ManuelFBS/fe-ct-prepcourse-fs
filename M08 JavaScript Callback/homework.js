@@ -5,8 +5,8 @@ function mayuscula(nombre) {
    // Debe devolver el mismo nombre, pero con la primera letra en mayúscula.
    // [Ejemplo]: "mario" ----> "Mario".
    // Tu código:
-   var inicial = nombre[0].toUpperCase();
-   var strParcial = nombre.substring(1);
+   const inicial = nombre[0].toUpperCase();
+   const strParcial = nombre.substring(1);
    return inicial + strParcial;
 }
 
@@ -55,7 +55,7 @@ function map(array, cb) {
    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
    // Retorna el nuevo arreglo.
    // Tu código:
-   var arreglo = [];      
+   let arreglo = [];      
    array.forEach(element => {
       arreglo.push(cb(element));
    });
@@ -72,7 +72,7 @@ function filter(arrayOfStrings) {
    // Debes identificar todos los elementos el arreglo que comiencen con la letra "a".
    // Luego retorna un nuevo arreglo con estos elementos.
    // Tu código:
-   var array = [];
+   let array = [];
    for (let i = 0; i < arrayOfStrings.length; i++) {
       if (arrayOfStrings[i].substring(0, 1) === 'a') array.push(arrayOfStrings[i]);
    }
