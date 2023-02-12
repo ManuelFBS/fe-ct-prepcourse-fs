@@ -40,6 +40,11 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   const mayusculas = /[A-Z]/g;
+   const minusculas = /[a-z]/g;
+   let irComienzo = string.match(mayusculas).join('') + string.match(minusculas).join('');
+   
+   return irComienzo;
 }
 
 function asAmirror(frase) {
@@ -47,18 +52,59 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   let separacionDePalabras = frase.split(' ');
+   let palabrasInvertidas = [];
+   let nuevaFrase = [];        
+   //
+   String.prototype.reverse = function() {
+      var stringInv = [];
+      for (var i = this.length - 1; i >= 0; i--) {
+         stringInv.push(this[i]);
+      }
+      return stringInv.join('');
+   }
+   //
+   for (let i = 0; i < separacionDePalabras.length; i++) {
+      palabrasInvertidas.push(separacionDePalabras[i].reverse());
+   }
+   nuevaFrase = palabrasInvertidas.join(' ');
+   //
+   return nuevaFrase;
 }
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   let strNumInvertido = '';
+   // 
+   String.prototype.reverse = function() {
+      var stringInv = [];
+      for (var i = this.length - 1; i >= 0; i--) {
+         stringInv.push(this[i]);
+      }
+      return stringInv.join('');
+   }
+   strNumInvertido = numero.toString().reverse();
+   //
+   if (numero.toString() === strNumInvertido) return 'Es capicua';
+   else return 'No es capicua';
 }
 
 function deleteAbc(string) {
    // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
    // Retorna el string sin estas letras.
    // Tu código:
+   let array = string.split('');
+   let nuevoArray = [];
+   //
+   for (let i = 0; i < array.length; i++) {
+      if (array[i] === 'a' || array[i] === 'b' || array[i] === 'c') continue;
+      else nuevoArray.push(array[i]);
+   }
+   let nuevoString = nuevoArray.join('');
+   //
+   return nuevoString;
 }
 
 function sortArray(arrayOfStrings) {
